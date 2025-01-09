@@ -161,8 +161,56 @@ function convertToRomanNumerals(num) {
  *  '10,5'    => 'one zero point five'
  *  '1950.2'  => 'one nine five zero point two'
  */
-function convertNumberToString(/* numberStr */) {
-  throw new Error('Not implemented');
+function convertNumberToString(numberStr) {
+  let result = '';
+
+  for (let i = 0; i < numberStr.length; i += 1) {
+    const char = numberStr[i];
+
+    switch (char) {
+      case '0':
+        result = result.length > 0 ? `${result} zero` : 'zero';
+        break;
+      case '1':
+        result = result.length > 0 ? `${result} one` : 'one';
+        break;
+      case '2':
+        result = result.length > 0 ? `${result} two` : 'two';
+        break;
+      case '3':
+        result = result.length > 0 ? `${result} three` : 'three';
+        break;
+      case '4':
+        result = result.length > 0 ? `${result} four` : 'four';
+        break;
+      case '5':
+        result = result.length > 0 ? `${result} five` : 'five';
+        break;
+      case '6':
+        result = result.length > 0 ? `${result} six` : 'six';
+        break;
+      case '7':
+        result = result.length > 0 ? `${result} seven` : 'seven';
+        break;
+      case '8':
+        result = result.length > 0 ? `${result} eight` : 'eight';
+        break;
+      case '9':
+        result = result.length > 0 ? `${result} nine` : 'nine';
+        break;
+      case '-':
+        result = result.length > 0 ? `${result} minus` : 'minus';
+        break;
+      case '.':
+      case ',':
+        result = result.length > 0 ? `${result} point` : 'point';
+        break;
+      default:
+        break;
+    }
+  }
+
+  return result;
 }
 
 /**
